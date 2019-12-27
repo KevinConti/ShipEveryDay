@@ -44,15 +44,21 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-    div []
-        [ header
-        , iShippedForm
+    div [class "flex flex-wrap"]
+        [ 
+            header
+            , div [class "w-1/3"] [
+                iShippedForm
+            ]
+            , div [class "w-2/3"] [
+                text "To-Do"
+            ]
         ]
 
 
 header : Html Msg
 header =
-    nav [ class "flex items-center justify-between flex-wrap bg-teal-500 p-6" ]
+    nav [ class "flex items-center justify-between flex-wrap bg-teal-500 p-6 w-full" ]
         [ div [ class "flex items-center flex-shrink-0 text-white mr-6" ]
             [ span [ class "font-semibold text-xl tracking-tight" ] [ text "ShipEveryDay" ]
             ]
